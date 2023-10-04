@@ -40,25 +40,25 @@ const Home = () => {
             {
                 <>
                     <div className='h-full flex items-center overflow-hidden'>
-                        <div className='ml-20'>
+                        <div className='ml-4 md:ml-8 lg:ml-14 xl:ml-20 max-[700px]:mr-4 max-[700px]:text-center'>
                             <Place place={travelData[currentPlace]}></Place>
                         </div>
-                        <div className='flex gap-4 relative left-20'>
-                            <div className='w-[200px] h-[300px] border-2 border-primary flex items-center rounded-xl relative'>
+                        <div className='flex gap-4 relative left-20 max-[700px]:hidden'>
+                            <div className='w-[150px] h-[225px] lg:w-[200px] lg:h-[300px] border-2 border-primary flex items-center rounded-xl relative'>
                                 <img className='object-cover h-full rounded-xl' src={travelData[currentPlace].image} alt="" />
-                                <h3 className='absolute font-bebas text-white text-3xl bottom-5 text-center w-full'>{travelData[currentPlace].title}</h3>
+                                <h3 className='absolute font-bebas text-white text-xl lg:text-2xl bottom-5 text-center w-full'>{travelData[currentPlace].title}</h3>
                             </div>
-                            <div className='w-[200px] h-[300px] flex items-center relative'>
+                            <div className='w-[150px] h-[225px] lg:w-[200px] lg:h-[300px] flex items-center relative'>
                                 <img className='object-cover h-full rounded-xl' src={currentPlace === (travelData.length - 1) && travelData[0].image || travelData[currentPlace + 1].image} alt="" />
-                                <h3 className='absolute font-bebas text-white text-3xl bottom-5 text-center w-full'>{currentPlace === (travelData.length - 1) && travelData[0].title || travelData[currentPlace + 1].title}</h3>
+                                <h3 className='absolute font-bebas text-white text-xl lg:text-2xl bottom-5 text-center w-full'>{currentPlace === (travelData.length - 1) && travelData[0].title || travelData[currentPlace + 1].title}</h3>
                             </div>
-                            <div className='w-[200px] h-[300px] flex items-center relative'>
+                            <div className='w-[150px] h-[225px] lg:w-[200px] lg:h-[300px] flex items-center relative'>
                                 <img className='object-cover h-full rounded-xl' src={currentPlace === (travelData.length - 1) && travelData[1].image || currentPlace === (travelData.length - 2) && travelData[0].image || travelData[currentPlace + 2].image} alt="" />
-                                <h3 className='absolute font-bebas text-white text-3xl bottom-5 text-center w-full'>{currentPlace === (travelData.length - 1) && travelData[1].title || currentPlace === (travelData.length - 2) && travelData[0].title || travelData[currentPlace + 2].title}</h3>
+                                <h3 className='absolute font-bebas text-white text-xl lg:text-2xl bottom-5 text-center w-full'>{currentPlace === (travelData.length - 1) && travelData[1].title || currentPlace === (travelData.length - 2) && travelData[0].title || travelData[currentPlace + 2].title}</h3>
                             </div>
                         </div>
                     </div>
-                    <div className='absolute top-[80%] flex justify-center gap-2 w-full px-4 md:px-8 lg:px-14 xl:px-20'>
+                    <div className='absolute top-[80%] flex justify-center gap-2 w-full max-w-screen-2xl px-4 md:px-8 lg:px-14 xl:px-20'>
                         <AiOutlineLeft onClick={previousPlace} className='text-2xl md:text-4xl bg-white rounded-full p-1 md:p-2 cursor-pointer' />
                         <AiOutlineRight onClick={nextPlace} className='text-2xl md:text-4xl bg-white rounded-full p-1 md:p-2 cursor-pointer' />
                     </div>

@@ -42,7 +42,7 @@ const Navbar = () => {
             <div style={theme} className='xl:hidden lg:block hidden font-medium'>
                 <div className='flex gap-10 justify-between items-center font-medium absolute w-full top-3 px-14'>
                     <div className='flex items-center gap-5'>
-                        <FiMenu onClick={()=>setShowMenuStatus(!showMenuStatus)} className='text-2xl' />
+                        <FiMenu onClick={()=>setShowMenuStatus(!showMenuStatus)} className='text-2xl cursor-pointer' />
                         <img className='w-28' src={lightTheme ? logoWhite : logoBlack} alt="" />
                     </div>
                     <div className='flex items-center gap-10'>
@@ -55,7 +55,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-                <div className={`absolute list-none p-5 top-[70px] left-[60px] rounded w-fit bg-[#00000080] ${showMenuStatus ? 'block' : 'hidden'}`}>
+                <div className={`absolute list-none p-5 top-[70px] left-[60px] rounded w-fit bg-[#000000BB] ${showMenuStatus ? 'block' : 'hidden'}`}>
                     {links}
                 </div>
             </div>
@@ -64,16 +64,16 @@ const Navbar = () => {
             {/* small devices */}
             <div style={theme} className='lg:hidden font-medium text-sm'>
                 <div className='flex items-center gap-5 absolute w-full top-3 md:px-8 px-4'>
-                    <FiMenu onClick={()=>setShowMenuStatus(!showMenuStatus)} className='text-2xl' />
+                    <FiMenu onClick={()=>setShowMenuStatus(!showMenuStatus)} className='text-2xl cursor-pointer' />
                     <img className='w-28 mx-auto' src={lightTheme ? logoWhite : logoBlack} alt="" />
                 </div>
-                <div className={`absolute list-none p-5 top-[70px] md:left-[35px] left-[20px] rounded w-fit mr-10 bg-[#00000080] ${showMenuStatus ? 'block' : 'hidden'}`}>
+                <div className={`absolute list-none p-5 top-[70px] md:left-[35px] left-[20px] rounded w-fit mr-10 bg-[#000000BB] space-y-3 ${showMenuStatus ? 'block' : 'hidden'}`}>
                     {links}
-                    <div className='relative mt-2'>
+                    <div className='relative'>
                         <BiSearch className='absolute top-2 text-xl left-2' />
                         <input className='w-full py-1 pl-8 pr-3 rounded bg-[#ffffff33] outline-none border border-white placeholder:text-white' type="text" placeholder='Search Your Destination...' />
                     </div>
-                    <div className='mt-2'>
+                    <div className=''>
                         <button onClick={()=>setShowMenuStatus(false)} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
                     </div>
                 </div>

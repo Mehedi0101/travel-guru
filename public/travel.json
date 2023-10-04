@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "title": "Santorini, Greece",
+        "description": "Santorini is a stunning Greek island known for its white-washed buildings, crystal-clear waters, and breathtaking sunsets. Located in the southern Aegean Sea, it's a popular destination for travelers seeking a mix of natural beauty, history, and romance. The island's iconic blue-domed churches and winding cobblestone streets offer endless photo opportunities, while its beaches, including the unique Red Beach, provide relaxation and water sports.\n\nSantorini also boasts a rich culinary scene with delicious Greek cuisine and local wines. Whether you're exploring the ancient ruins of Akrotiri, watching the sunset from Oia, or enjoying a boat tour to the volcanic islands, Santorini promises an unforgettable experience. Choose from a variety of accommodations, from luxury resorts with infinity pools to cozy boutique hotels overlooking the Caldera.",
+        "image": "https://i.ibb.co/gVXYCJG/santorini.webp",
+        "hotels": [
+            {
+                "hotel_id": 101,
+                "hotel_title": "Aqua Vista Resort",
+                "room_features": [
+                    "Private Balcony",
+                    "Sea View",
+                    "Infinity Pool"
+                ],
+                "rating": 4.8,
+                "rating_count": 320,
+                "price": 350
+            },
+            {
+                "hotel_id": 102,
+                "hotel_title": "Santorini Suites",
+                "room_features": [
+                    "Caldera View",
+                    "Hot Tub",
+                    "Traditional Decor"
+                ],
+                "rating": 4.7,
+                "rating_count": 280,
+                "price": 300
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Kyoto, Japan",
+        "description": "Kyoto, a city in Japan's Kansai region, is a captivating blend of ancient traditions and modern culture. With a history dating back over a thousand years, Kyoto is renowned for its well-preserved temples, traditional tea houses, and exquisite gardens. Explore iconic sites like Kinkaku-ji (the Golden Pavilion), Fushimi Inari Shrine with its thousands of torii gates, and the serene Arashiyama Bamboo Grove.\n\nIn addition to its historical charm, Kyoto offers a culinary journey featuring kaiseki cuisine and matcha tea. Stay in traditional ryokans with tatami mat floors, futon beds, and Japanese gardens, or opt for modern hotels with city views and Western comforts. Whether you're enjoying a tea ceremony or participating in a seasonal festival, Kyoto is a city where past and present coexist harmoniously.",
+        "image": "https://i.ibb.co/LvzRx99/kyoto.jpg",
+        "hotels": [
+            {
+                "hotel_id": 201,
+                "hotel_title": "Bamboo Retreat Ryokan",
+                "room_features": [
+                    "Tatami Mat Floors",
+                    "Zen Garden View",
+                    "Kaiseki Dining"
+                ],
+                "rating": 4.9,
+                "rating_count": 220,
+                "price": 400
+            },
+            {
+                "hotel_id": 202,
+                "hotel_title": "Kyoto Garden Hotel",
+                "room_features": [
+                    "Western Comfort",
+                    "City View",
+                    "Japanese Spa"
+                ],
+                "rating": 4.6,
+                "rating_count": 180,
+                "price": 250
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Machu Picchu, Peru",
+        "description": "Machu Picchu, often referred to as the 'Lost City of the Incas,' is one of the most iconic archaeological sites in the world. Located high in the Andes Mountains of Peru, this ancient citadel offers a glimpse into the remarkable achievements of the Inca civilization. With its stunning terraces, temples, and intricate stone structures, Machu Picchu is a testament to the ingenuity of its builders.\n\nTo reach Machu Picchu, many travelers embark on the famous Inca Trail, a multi-day trek through breathtaking landscapes. Alternatively, you can take a scenic train journey to Aguas Calientes, the gateway to Machu Picchu. After a day of exploration, relax in comfortable lodges, enjoy traditional Peruvian cuisine, and take in the panoramic views of the surrounding mountains.",
+        "image": "https://i.ibb.co/9qMwcM4/machupichu.jpg",
+        "hotels": [
+            {
+                "hotel_id": 301,
+                "hotel_title": "Andean Lodge",
+                "room_features": [
+                    "Mountain Views",
+                    "Complimentary Breakfast",
+                    "Guided Tours"
+                ],
+                "rating": 4.7,
+                "rating_count": 250,
+                "price": 300
+            },
+            {
+                "hotel_id": 302,
+                "hotel_title": "Inca Sanctuary Hotel",
+                "room_features": [
+                    "River View",
+                    "Authentic Cuisine",
+                    "Hot Springs"
+                ],
+                "rating": 4.5,
+                "rating_count": 210,
+                "price": 220
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Bora Bora, French Polynesia",
+        "description": "Bora Bora, a small island in French Polynesia, is the epitome of tropical paradise. Known for its stunning overwater bungalows, clear turquoise waters, and lush green hills, it's a dream destination for honeymooners and anyone seeking a luxurious escape. Snorkel in coral gardens, swim with rays and sharks, or simply relax on powdery white-sand beaches.\n\nThe island offers an array of water-based activities, from jet skiing to paddleboarding, and its vibrant marine life is a paradise for divers. Choose from a range of upscale resorts with overwater bungalows featuring glass floors and private decks. Bora Bora is the perfect destination for a romantic getaway or a once-in-a-lifetime tropical adventure.",
+        "image": "https://i.ibb.co/Y38xD1M/borabora.jpg",
+        "hotels": [
+            {
+                "hotel_id": 401,
+                "hotel_title": "Blue Lagoon Resort",
+                "room_features": [
+                    "Overwater Bungalows",
+                    "Glass Floor",
+                    "Private Deck"
+                ],
+                "rating": 4.9,
+                "rating_count": 280,
+                "price": 800
+            },
+            {
+                "hotel_id": 402,
+                "hotel_title": "Tahitian Paradise Lodge",
+                "room_features": [
+                    "Beachfront Villas",
+                    "Infinity Pool",
+                    "Sunset Views"
+                ],
+                "rating": 4.8,
+                "rating_count": 320,
+                "price": 700
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "African Safari, Tanzania",
+        "description": "Embark on an unforgettable African safari adventure in Tanzania. Witness the Big Five—lion, elephant, buffalo, leopard, and rhinoceros—amidst stunning savannas and pristine wilderness. Tanzania is home to some of the world's most renowned national parks, including the Serengeti, Ngorongoro Crater, and Tarangire, where wildlife enthusiasts can experience thrilling game drives and witness the Great Migration.\n\nBut Tanzania is more than just wildlife. It's a place of rich cultural experiences, with opportunities to meet Maasai communities and learn about their traditions. Accommodations range from luxury safari lodges with panoramic views to charming tented camps, ensuring you're immersed in the beauty of the African landscape. Prepare for an adventure of a lifetime as you explore Tanzania's remarkable natural and cultural diversity.",
+        "image": "https://i.ibb.co/gZh8qXL/africansafari.jpg",
+        "hotels": [
+            {
+                "hotel_id": 501,
+                "hotel_title": "Serengeti Safari Lodge",
+                "room_features": [
+                    "Safari Tents",
+                    "Game Drives",
+                    "Bush Dinners"
+                ],
+                "rating": 4.7,
+                "rating_count": 300,
+                "price": 500
+            },
+            {
+                "hotel_id": 502,
+                "hotel_title": "Ngorongoro Crater Camp",
+                "room_features": [
+                    "Luxury Tents",
+                    "Crater Views",
+                    "Cultural Experiences"
+                ],
+                "rating": 4.6,
+                "rating_count": 270,
+                "price": 450
+            }
+        ]
+    }
+]

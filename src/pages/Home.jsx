@@ -5,6 +5,7 @@ import Place from "../components/Home/Place";
 import { useState } from 'react';
 
 const Home = () => {
+    document.title = "Travel Guru"
 
     const travelData = useLoaderData();
 
@@ -44,7 +45,7 @@ const Home = () => {
                             <Place place={travelData[currentPlace]}></Place>
                         </div>
                         <div className='flex gap-4 relative left-20 max-[700px]:hidden'>
-                            <div className='w-[150px] h-[225px] lg:w-[200px] lg:h-[300px] border-2 border-primary flex items-center rounded-xl relative'>
+                            <div className='w-[150px] h-[225px] lg:w-[200px] lg:h-[300px] border-[3px] border-primary flex items-center rounded-2xl relative'>
                                 <img className='object-cover h-full rounded-xl' src={travelData[currentPlace].image} alt="" />
                                 <h3 className='absolute font-bebas text-white text-xl lg:text-2xl bottom-5 text-center w-full'>{travelData[currentPlace].title}</h3>
                             </div>

@@ -2,14 +2,14 @@ import { BiSearch } from 'react-icons/bi';
 import { FiMenu } from 'react-icons/fi';
 import logoBlack from '../../assets/logo.png';
 import logoWhite from '../../assets/logo-white.png';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 const Navbar = () => {
 
     const [showMenuStatus, setShowMenuStatus] = useState(false);
     const currentLocation = useLocation();
-    const lightTheme = currentLocation.pathname === '/' ? true : false;
+    const lightTheme = currentLocation.pathname === '/' || currentLocation.pathname.includes('/destination-details') ? true : false;
     const theme = lightTheme ? { color: 'white' } : { color: 'black' };
     const links = <>
         <li onClick={()=>setShowMenuStatus(false)}>News</li>
@@ -24,7 +24,7 @@ const Navbar = () => {
 
             <div style={theme} className='xl:flex gap-10 justify-between items-center font-medium absolute w-full max-w-screen-2xl px-20 top-3 hidden'>
                 <div>
-                    <img className='w-40' src={lightTheme ? logoWhite : logoBlack} alt="" />
+                    <Link to='/'><img className='w-40' src={lightTheme ? logoWhite : logoBlack} alt="" /></Link>
                 </div>
                 <div className='relative'>
                     <BiSearch className='absolute top-2 text-xl left-2' />
@@ -43,7 +43,7 @@ const Navbar = () => {
                 <div className='flex gap-10 justify-between items-center font-medium absolute w-full top-3 px-14'>
                     <div className='flex items-center gap-5'>
                         <FiMenu onClick={()=>setShowMenuStatus(!showMenuStatus)} className='text-2xl cursor-pointer' />
-                        <img className='w-28' src={lightTheme ? logoWhite : logoBlack} alt="" />
+                        <Link to='/'><img className='w-28' src={lightTheme ? logoWhite : logoBlack} alt="" /></Link>
                     </div>
                     <div className='flex items-center gap-10'>
                         <div className='relative'>
@@ -65,7 +65,7 @@ const Navbar = () => {
             <div style={theme} className='lg:hidden font-medium text-sm'>
                 <div className='flex items-center gap-5 absolute w-full top-3 md:px-8 px-4'>
                     <FiMenu onClick={()=>setShowMenuStatus(!showMenuStatus)} className='text-2xl cursor-pointer' />
-                    <img className='w-28 mx-auto' src={lightTheme ? logoWhite : logoBlack} alt="" />
+                    <Link to='/'><img className='w-28 mx-auto' src={lightTheme ? logoWhite : logoBlack} alt="" /></Link>
                 </div>
                 <div className={`absolute list-none p-5 top-[70px] md:left-[35px] left-[20px] rounded w-fit mr-10 bg-[#000000BB] space-y-3 ${showMenuStatus ? 'block' : 'hidden'}`}>
                     {links}

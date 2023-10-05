@@ -1,15 +1,17 @@
 import { useContext, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Store } from "react-notifications-component";
 
 const Login = () => {
+    document.title = 'Login';
     const [showPassword, setShowPassword] = useState(false);
     const {loginEmailPassword} = useContext(AuthContext);
     const [verificationError, setVerificationError] = useState(false);
     const [credentialsError, setCredentialsError] = useState(false);
     const navigate = useNavigate();
+    const {state} = useLocation();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -27,7 +29,7 @@ const Login = () => {
                 setVerificationError(true);
                 return;
             }
-            navigate('/');
+            navigate(state || '/');
             Store.addNotification({
                 title: "Logged in successfully",
                 type: "success",

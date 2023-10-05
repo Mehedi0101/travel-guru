@@ -2,7 +2,7 @@ import { BiSearch } from 'react-icons/bi';
 import { FiMenu } from 'react-icons/fi';
 import logoBlack from '../../assets/logo.png';
 import logoWhite from '../../assets/logo-white.png';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -11,12 +11,21 @@ const Navbar = () => {
     const currentLocation = useLocation();
     const lightTheme = currentLocation.pathname === '/' || currentLocation.pathname.includes('/destination-details') ? true : false;
     const theme = lightTheme ? { color: 'white' } : { color: 'black' };
+
+    const showSearchBar = currentLocation.pathname.includes('/authentication') ? false : true;
+
     const links = <>
         <li onClick={()=>setShowMenuStatus(false)}>News</li>
         <li onClick={()=>setShowMenuStatus(false)}>Destination</li>
         <li onClick={()=>setShowMenuStatus(false)}>Blog</li>
         <li onClick={()=>setShowMenuStatus(false)}>Contact</li>
     </>;
+
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate('/authentication/login');
+    }
 
     return (
         <>
@@ -26,7 +35,7 @@ const Navbar = () => {
                 <div>
                     <Link to='/'><img className='w-40' src={lightTheme ? logoWhite : logoBlack} alt="" /></Link>
                 </div>
-                <div className='relative'>
+                <div className={`relative ${!showSearchBar && 'invisible'}`}>
                     <BiSearch className='absolute top-2 text-xl left-2' />
                     <input className='w-full py-1 pl-8 pr-3 rounded bg-[#ffffff33] outline-none border border-white placeholder:text-white' type="text" placeholder='Search Your Destination...' />
                 </div>
@@ -34,7 +43,7 @@ const Navbar = () => {
                     {links}
                 </div>
                 <div>
-                    <button className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
+                    <button onClick={handleLogin} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
                 </div>
             </div>
 
@@ -46,16 +55,16 @@ const Navbar = () => {
                         <Link to='/'><img className='w-28' src={lightTheme ? logoWhite : logoBlack} alt="" /></Link>
                     </div>
                     <div className='flex items-center gap-10'>
-                        <div className='relative'>
+                        <div className={`relative ${!showSearchBar && 'hidden'}`}>
                             <BiSearch className='absolute top-2 text-xl left-2' />
                             <input className='w-full py-1 pl-8 pr-3 rounded bg-[#ffffff33] outline-none border border-white placeholder:text-white' type="text" placeholder='Search Your Destination...' />
                         </div>
                         <div>
-                            <button className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
+                            <button onClick={handleLogin} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
                         </div>
                     </div>
                 </div>
-                <div className={`absolute list-none p-5 top-[70px] left-[60px] rounded w-fit bg-[#000000BB] ${showMenuStatus ? 'block' : 'hidden'}`}>
+                <div className={`absolute list-none p-5 top-[70px] left-[60px] rounded w-fit bg-[#000000BB] text-white ${showMenuStatus ? 'block' : 'hidden'}`}>
                     {links}
                 </div>
             </div>
@@ -67,14 +76,14 @@ const Navbar = () => {
                     <FiMenu onClick={()=>setShowMenuStatus(!showMenuStatus)} className='text-2xl cursor-pointer' />
                     <Link to='/'><img className='w-28 mx-auto' src={lightTheme ? logoWhite : logoBlack} alt="" /></Link>
                 </div>
-                <div className={`absolute list-none p-5 top-[70px] md:left-[35px] left-[20px] rounded w-fit mr-10 bg-[#000000BB] space-y-3 ${showMenuStatus ? 'block' : 'hidden'}`}>
+                <div className={`absolute list-none p-5 top-[70px] md:left-[35px] left-[20px] rounded w-fit mr-10 bg-[#000000BB] space-y-3 text-white ${showMenuStatus ? 'block' : 'hidden'}`}>
                     {links}
-                    <div className='relative'>
+                    <div className={`relative ${!showSearchBar && 'hidden'}`}>
                         <BiSearch className='absolute top-2 text-xl left-2' />
                         <input className='w-full py-1 pl-8 pr-3 rounded bg-[#ffffff33] outline-none border border-white placeholder:text-white' type="text" placeholder='Search Your Destination...' />
                     </div>
-                    <div className=''>
-                        <button onClick={()=>setShowMenuStatus(false)} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
+                    <div>
+                        <button onClick={()=>{setShowMenuStatus(false); handleLogin();} } className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
                     </div>
                 </div>
             </div>

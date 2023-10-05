@@ -74,42 +74,40 @@ const Register = () => {
             })
     }
     return (
-        <div>
-            <form onSubmit={handleRegister} className="text-black xl:p-14 lg:p-12 md:p-10 p-8 border border-[#C5C5C5] rounded text-sm md:text-base max-w-[90%] mx-auto">
-                <h2 className="font-bold text-xl md:text-2xl mb-10">Create an account</h2>
-                <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="text" name="firstName" id="firstName" placeholder="First Name" required />
-                <br />
-                <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="text" name="lastName" id="lastName" placeholder="Last Name" required />
-                <br />
-                <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="email" name="email" id="email" placeholder="Username or Email" required />
+        <form onSubmit={handleRegister} className="text-black xl:p-14 lg:p-12 md:p-10 p-8 border border-[#C5C5C5] rounded text-sm md:text-base max-w-[90%] mx-auto">
+            <h2 className="font-bold text-xl md:text-2xl mb-10">Create an account</h2>
+            <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="text" name="firstName" id="firstName" placeholder="First Name" required />
+            <br />
+            <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="text" name="lastName" id="lastName" placeholder="Last Name" required />
+            <br />
+            <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="email" name="email" id="email" placeholder="Username or Email" required />
+            {
+                alreadyExistError && <p className="text-red-500 text-xs -mt-8 max-w-full w-[400px]">Email is already in use</p>
+            }
+            <div className="mb-8 relative">
+                <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" required />
                 {
-                    alreadyExistError && <p className="text-red-500 text-xs -mt-8 max-w-full w-[400px]">Email is already in use</p>
+                    showPassword ? <AiOutlineEyeInvisible onClick={() => setShowPassword(!showPassword)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" /> : <AiOutlineEye onClick={() => setShowPassword(!showPassword)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" />
                 }
-                <div className="mb-8 relative">
-                    <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" required />
-                    {
-                        showPassword ? <AiOutlineEyeInvisible onClick={() => setShowPassword(!showPassword)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" /> : <AiOutlineEye onClick={() => setShowPassword(!showPassword)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" />
-                    }
-                </div>
+            </div>
+            {
+                passwordError && <p className="text-red-500 text-xs -mt-8 max-w-full w-[400px]">*{passwordError}</p>
+            }
+            <div className="mb-5 relative">
+                <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px]" type={showConfirmation ? 'text' : 'password'} name="confirmPassword" id="confirmPassword" placeholder="Confirm password" required />
                 {
-                    passwordError && <p className="text-red-500 text-xs -mt-8 max-w-full w-[400px]">*{passwordError}</p>
+                    showConfirmation ? <AiOutlineEyeInvisible onClick={() => setShowConfirmation(!showConfirmation)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" /> : <AiOutlineEye onClick={() => setShowConfirmation(!showConfirmation)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" />
                 }
-                <div className="mb-5 relative">
-                    <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px]" type={showConfirmation ? 'text' : 'password'} name="confirmPassword" id="confirmPassword" placeholder="Confirm password" required />
-                    {
-                        showConfirmation ? <AiOutlineEyeInvisible onClick={() => setShowConfirmation(!showConfirmation)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" /> : <AiOutlineEye onClick={() => setShowConfirmation(!showConfirmation)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" />
-                    }
-                </div>
-                {
-                    confirmationError && <p className="text-red-500 text-xs -mt-5 max-w-full w-[400px]">*passwords don&apos;t match</p>
-                }
-                <button className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform w-full font-medium mb-3'>Create an account</button>
-                <div className="flex justify-center gap-1 text-sm font-medium">
-                    <p>Already have an account?</p>
-                    <Link className="text-primary underline" to='/authentication/login'>Login</Link>
-                </div>
-            </form>
-        </div>
+            </div>
+            {
+                confirmationError && <p className="text-red-500 text-xs -mt-5 max-w-full w-[400px]">*passwords don&apos;t match</p>
+            }
+            <button className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform w-full font-medium mb-3'>Create an account</button>
+            <div className="flex justify-center gap-1 text-sm font-medium">
+                <p>Already have an account?</p>
+                <Link className="text-primary underline" to='/authentication/login'>Login</Link>
+            </div>
+        </form>
     );
 };
 

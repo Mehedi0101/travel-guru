@@ -16,12 +16,13 @@ const Navbar = () => {
     const theme = lightTheme ? { color: 'white' } : { color: 'black' };
 
     const showSearchBar = currentLocation.pathname.includes('/authentication') || currentLocation.pathname.includes('/hotels') ? false : true;
+    const showUserName = currentLocation.pathname.includes('/hotels') ? true : false;
 
     const links = <>
-        <li onClick={()=>setShowMenuStatus(false)}>News</li>
-        <li onClick={()=>setShowMenuStatus(false)}>Destination</li>
-        <li onClick={()=>setShowMenuStatus(false)}>Blog</li>
-        <li onClick={()=>setShowMenuStatus(false)}>Contact</li>
+        <li className='cursor-pointer' onClick={()=>setShowMenuStatus(false)}>News</li>
+        <li className='cursor-pointer' onClick={()=>setShowMenuStatus(false)}>Destination</li>
+        <li className='cursor-pointer' onClick={()=>setShowMenuStatus(false)}>Blog</li>
+        <li className='cursor-pointer' onClick={()=>setShowMenuStatus(false)}>Contact</li>
     </>;
 
     const navigate = useNavigate();
@@ -66,6 +67,10 @@ const Navbar = () => {
                 </div>
                 <div>
                     {
+                        showUserName 
+                        ?
+                        <button className='px-5 py-2 rounded text-black transition-transform font-bold cursor-default'>{currentUser?.displayName}</button>
+                        :
                         currentUser?.emailVerified
                         ?
                         <button onClick={handleLogout} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Logout</button>
@@ -89,6 +94,10 @@ const Navbar = () => {
                         </div>
                         <div>
                             {
+                                showUserName 
+                                ?
+                                <button className='px-5 py-2 rounded text-black transition-transform font-bold cursor-default'>{currentUser?.displayName}</button>
+                                :
                                 currentUser?.emailVerified
                                 ?
                                 <button onClick={handleLogout} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Logout</button>
@@ -118,6 +127,10 @@ const Navbar = () => {
                     </div>
                     <div>
                         {
+                            showUserName 
+                            ?
+                            <button onClick={()=>{setShowMenuStatus(false);} } className='px-5 py-2 rounded text-white transition-transform font-bold cursor-default'>{currentUser?.displayName}</button>
+                            :
                             currentUser?.emailVerified 
                             ? 
                             <button onClick={()=>{setShowMenuStatus(false); handleLogout();} } className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Logout</button>

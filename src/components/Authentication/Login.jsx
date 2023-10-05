@@ -50,7 +50,7 @@ const Login = () => {
                     <input className="mr-1 cursor-pointer" type="checkbox" name="remember" id="remember" />
                     <label htmlFor="remember">Remember Me</label>
                 </div>
-                <Link className="text-primary underline">Forgot Password?</Link>
+                <Link to='/authentication/forgot-password' className="text-primary underline">Forgot Password?</Link>
             </div>
             <button className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform w-full font-medium mb-3'>Login</button>
             {

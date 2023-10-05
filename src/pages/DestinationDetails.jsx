@@ -4,6 +4,7 @@ const DestinationDetails = () => {
     const travelData = useLoaderData();
     const { id: travelId } = useParams();
     const { id, title, description, image } = travelData.find(place => place.id === Number(travelId));
+    document.title = title;
     const navigate = useNavigate();
 
     const bgImg = {

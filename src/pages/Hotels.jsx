@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import Hotel from "../components/Hotels/Hotel";
 
 const Hotels = () => {
+    document.title = 'Available Hotels';
     const travelData = useLoaderData();
     const { id:travelId } = useParams();
     const { title, hotels } = travelData.find(place => place.id === Number(travelId));

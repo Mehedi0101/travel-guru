@@ -3,9 +3,12 @@ import { FiMenu } from 'react-icons/fi';
 import logoBlack from '../../assets/logo.png';
 import logoWhite from '../../assets/logo-white.png';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
+import { Store } from 'react-notifications-component';
 
 const Navbar = () => {
+    const { currentUser, logoutUser } = useContext(AuthContext);
 
     const [showMenuStatus, setShowMenuStatus] = useState(false);
     const currentLocation = useLocation();
@@ -27,6 +30,25 @@ const Navbar = () => {
         navigate('/authentication/login');
     }
 
+    const handleLogout = () => {
+        logoutUser()
+        .then(()=>{
+            Store.addNotification({
+                title: "Logged out successfully",
+                type: "info",
+                insert: "top",
+                container: "top-center",
+                animationIn: ["animate__animated", "animate__fadeIn"],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true
+                }
+            })
+            navigate('/authentication/login');
+        })
+    }
+
     return (
         <>
             {/* large devices */}
@@ -43,7 +65,13 @@ const Navbar = () => {
                     {links}
                 </div>
                 <div>
-                    <button onClick={handleLogin} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
+                    {
+                        currentUser?.emailVerified
+                        ?
+                        <button onClick={handleLogout} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Logout</button>
+                        :
+                        <button onClick={handleLogin} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
+                    }
                 </div>
             </div>
 
@@ -60,7 +88,13 @@ const Navbar = () => {
                             <input className='w-full py-1 pl-8 pr-3 rounded bg-[#ffffff33] outline-none border border-white placeholder:text-white' type="text" placeholder='Search Your Destination...' />
                         </div>
                         <div>
-                            <button onClick={handleLogin} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
+                            {
+                                currentUser?.emailVerified
+                                ?
+                                <button onClick={handleLogout} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Logout</button>
+                                :
+                                <button onClick={handleLogin} className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
+                            }
                         </div>
                     </div>
                 </div>
@@ -83,7 +117,13 @@ const Navbar = () => {
                         <input className='w-full py-1 pl-8 pr-3 rounded bg-[#ffffff33] outline-none border border-white placeholder:text-white' type="text" placeholder='Search Your Destination...' />
                     </div>
                     <div>
-                        <button onClick={()=>{setShowMenuStatus(false); handleLogin();} } className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
+                        {
+                            currentUser?.emailVerified 
+                            ? 
+                            <button onClick={()=>{setShowMenuStatus(false); handleLogout();} } className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Logout</button>
+                            :
+                            <button onClick={()=>{setShowMenuStatus(false); handleLogin();} } className='px-5 py-2 bg-primary rounded text-black active:scale-95 transition-transform'>Login</button>
+                        }
                     </div>
                 </div>
             </div>

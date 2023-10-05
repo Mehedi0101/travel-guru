@@ -9,7 +9,7 @@ const Authentication = () => {
             <Outlet></Outlet>
             {!pathname.includes('/authentication/forgot-password')
                 &&
-                <div className="max-w-full w-[400px]">
+                <div className="max-w-[90%] w-[400px]">
                     <div className="flex items-center gap-2 my-6">
                         <hr className="border-[1px] border-[#C5C5C5] w-full" />
                         <p className="text-black font-medium">Or</p>

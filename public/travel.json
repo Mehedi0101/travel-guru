@@ -7,6 +7,7 @@
         "hotels": [
             {
                 "hotel_id": 101,
+                "hotel_image": "https://i.ibb.co/Qr3gH5x/Rectangle-28.png",
                 "hotel_title": "Aqua Vista Resort",
                 "room_features": [
                     "Private Balcony",
@@ -19,6 +20,7 @@
             },
             {
                 "hotel_id": 102,
+                "hotel_image": "https://i.ibb.co/zVMF3QR/Rectangle-26.png",
                 "hotel_title": "Santorini Suites",
                 "room_features": [
                     "Caldera View",
@@ -39,6 +41,7 @@
         "hotels": [
             {
                 "hotel_id": 201,
+                "hotel_image": "https://i.ibb.co/vZ1FFhq/Rectangle-27.png",
                 "hotel_title": "Bamboo Retreat Ryokan",
                 "room_features": [
                     "Tatami Mat Floors",
@@ -51,6 +54,7 @@
             },
             {
                 "hotel_id": 202,
+                "hotel_image": "https://i.ibb.co/zVMF3QR/Rectangle-26.png",
                 "hotel_title": "Kyoto Garden Hotel",
                 "room_features": [
                     "Western Comfort",
@@ -71,6 +75,7 @@
         "hotels": [
             {
                 "hotel_id": 301,
+                "hotel_image": "https://i.ibb.co/Qr3gH5x/Rectangle-28.png",
                 "hotel_title": "Andean Lodge",
                 "room_features": [
                     "Mountain Views",
@@ -83,6 +88,7 @@
             },
             {
                 "hotel_id": 302,
+                "hotel_image": "https://i.ibb.co/vZ1FFhq/Rectangle-27.png",
                 "hotel_title": "Inca Sanctuary Hotel",
                 "room_features": [
                     "River View",
@@ -103,6 +109,7 @@
         "hotels": [
             {
                 "hotel_id": 401,
+                "hotel_image": "https://i.ibb.co/zVMF3QR/Rectangle-26.png",
                 "hotel_title": "Blue Lagoon Resort",
                 "room_features": [
                     "Overwater Bungalows",
@@ -115,6 +122,7 @@
             },
             {
                 "hotel_id": 402,
+                "hotel_image": "https://i.ibb.co/Qr3gH5x/Rectangle-28.png",
                 "hotel_title": "Tahitian Paradise Lodge",
                 "room_features": [
                     "Beachfront Villas",
@@ -135,6 +143,7 @@
         "hotels": [
             {
                 "hotel_id": 501,
+                "hotel_image": "https://i.ibb.co/vZ1FFhq/Rectangle-27.png",
                 "hotel_title": "Serengeti Safari Lodge",
                 "room_features": [
                     "Safari Tents",
@@ -147,6 +156,7 @@
             },
             {
                 "hotel_id": 502,
+                "hotel_image": "https://i.ibb.co/zVMF3QR/Rectangle-26.png",
                 "hotel_title": "Ngorongoro Crater Camp",
                 "room_features": [
                     "Luxury Tents",

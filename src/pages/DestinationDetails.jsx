@@ -1,9 +1,10 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 
 const DestinationDetails = () => {
     const travelData = useLoaderData();
     const { id: travelId } = useParams();
-    const { title, description, image } = travelData.find(place => place.id === Number(travelId));
+    const { id, title, description, image } = travelData.find(place => place.id === Number(travelId));
+    const navigate = useNavigate();
 
     const bgImg = {
         backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url("${image}")`,
@@ -14,6 +15,7 @@ const DestinationDetails = () => {
 
     const handleStartBooking = e => {
         e.preventDefault();
+        navigate(`/hotels/${id}`);
     }
 
     return (

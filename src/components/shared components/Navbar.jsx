@@ -15,7 +15,7 @@ const Navbar = () => {
     const lightTheme = currentLocation.pathname === '/' || currentLocation.pathname.includes('/destination-details') ? true : false;
     const theme = lightTheme ? { color: 'white' } : { color: 'black' };
 
-    const showSearchBar = currentLocation.pathname.includes('/authentication') ? false : true;
+    const showSearchBar = currentLocation.pathname.includes('/authentication') || currentLocation.pathname.includes('/hotels') ? false : true;
 
     const links = <>
         <li onClick={()=>setShowMenuStatus(false)}>News</li>

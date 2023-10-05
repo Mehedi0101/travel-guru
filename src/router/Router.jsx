@@ -6,6 +6,8 @@ import Authentication from "../pages/Authentication";
 import Login from "../components/Authentication/Login";
 import Register from "../components/Authentication/Register";
 import ForgotPassword from "../components/Authentication/ForgotPassword";
+import Hotels from "../pages/Hotels";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +42,11 @@ const router = createBrowserRouter([
                         element: <ForgotPassword></ForgotPassword>
                     }
                 ]
+            },
+            {
+                path: '/hotels/:id',
+                loader: () => fetch('/travel.json'),
+                element: <PrivateRoute><Hotels></Hotels></PrivateRoute>
             }
         ]
     }

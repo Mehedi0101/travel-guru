@@ -60,8 +60,8 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='absolute top-[80%] flex justify-center gap-2 w-full max-w-screen-2xl px-4 md:px-8 lg:px-14 xl:px-20'>
-                        <AiOutlineLeft onClick={previousPlace} className='text-2xl md:text-4xl bg-white rounded-full p-1 md:p-2 cursor-pointer' />
-                        <AiOutlineRight onClick={nextPlace} className='text-2xl md:text-4xl bg-white rounded-full p-1 md:p-2 cursor-pointer' />
+                        <AiOutlineLeft onClick={previousPlace} className='text-2xl md:text-4xl bg-white rounded-full p-1 md:p-2 cursor-pointer active:scale-95 transition-transform' />
+                        <AiOutlineRight onClick={nextPlace} className='text-2xl md:text-4xl bg-white rounded-full p-1 md:p-2 cursor-pointer active:scale-95 transition-transform' />
                     </div>
                 </>
             }

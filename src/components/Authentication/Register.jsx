@@ -80,7 +80,7 @@ const Register = () => {
             <br />
             <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="text" name="lastName" id="lastName" placeholder="Last Name" required />
             <br />
-            <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="email" name="email" id="email" placeholder="Username or Email" required />
+            <input className="outline-none border-b-2 border-[#C5C5C5] font-medium placeholder:text-black placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="email" name="email" id="email" placeholder="Email" required />
             {
                 alreadyExistError && <p className="text-red-500 text-xs -mt-8 max-w-full w-[400px]">Email is already in use</p>
             }

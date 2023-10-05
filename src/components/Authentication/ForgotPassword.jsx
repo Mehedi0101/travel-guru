@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Store } from "react-notifications-component";
+import { useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
     const { resetPassword } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleResetPassword = e => {
         e.preventDefault();
@@ -25,6 +27,7 @@ const ForgotPassword = () => {
                     onScreen: true
                 }
             });
+            navigate('/authentication/login');
         })
         .catch(()=>{
             Store.addNotification({
